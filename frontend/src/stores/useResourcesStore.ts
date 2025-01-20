@@ -9,15 +9,17 @@ export interface ResourceStoreEntry {
 
 export const useResourcesStore = defineStore('resources', () => {
     const resources =
-            useLocalStorage<ResourceStoreEntry[]>('opencraft/resources', [
-                {title: 'Fire', emoji: '🔥'},
-                {title: 'Water', emoji: '💧'},
-                {title: 'Earth', emoji: '🌍'},
-                {title: 'Air', emoji: '💨'},
-            ]);
+        useLocalStorage<ResourceStoreEntry[]>('chemcraft/resources', [ // Изменён ключ с 'opencraft' на 'chemcraft'
+            {title: 'Hydrogen', emoji: '⚪'},  // Водород
+            {title: 'Oxygen', emoji: '🔵'},   // Кислород
+            {title: 'Carbon', emoji: '⚫'},    // Углерод
+            {title: 'Sodium', emoji: '🟡'},   // Натрий
+            {title: 'Chlorine', emoji: '🟢'}, // Хлор
+        ]);
     function addResource(box: ResourceStoreEntry) {
         resources.value.push(box)
     }
 
     return { resources, addResource}
 })
+
