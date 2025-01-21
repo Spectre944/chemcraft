@@ -4,19 +4,12 @@ import { open } from 'sqlite';
 import { fileURLToPath } from "url";
 import path from "path";
 import cors from '@fastify/cors';
+import { initialRecipes, basicReactions } from './reactions.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 let db;
-
-// Базовые химические реакции
-const basicReactions = {
-    "Hydrogen + Oxygen": { result: "Water", emoji: "💧" },
-    "Carbon + Oxygen": { result: "CarbonDioxide", emoji: "☁️" },
-    "Sodium + Chlorine": { result: "Salt", emoji: "🧂" },
-    // Добавьте больше базовых реакций
-};
 
 async function initializeDatabase() {
     db = await open({
@@ -71,12 +64,12 @@ fastify.route({
     handler: async (request, reply) => {
         reply.type('application/json').code(200);
         
-        return {
-            'Hydrogen + Oxygen': await findReaction('Hydrogen', 'Oxygen'),
-            'Carbon + Oxygen': await findReaction('Carbon', 'Oxygen'),
-            'Sodium + Chlorine': await findReaction('Sodium', 'Chlorine'),
-            // Добавьте другие базовые комбинации
-        };
+        const result = {};
+        for (const recipe of initialRecipes) {
+            const [first, second] = recipe.split(' + ');
+            result[recipe] = await findReaction(first, second);
+        }
+        return result;
     }
 });
 

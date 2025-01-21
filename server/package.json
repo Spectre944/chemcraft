@@ -14,7 +14,7 @@
     "@elysiajs/cors": "^0.8.0",
     "@fastify/cors": "^9.0.1",
     "elysia": "^0.8.17",
-    "fastify": "^4.26.2",
+    "fastify": "^4.29.0",
     "node-llama-cpp": "^2.8.8",
     "path": "^0.12.7",
     "sqlite": "^5.1.1",
