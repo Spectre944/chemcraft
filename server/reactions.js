@@ -2,38 +2,42 @@ export const initialRecipes = [
     'Hydrogen + Oxygen',
     'Carbon + Oxygen',
     'Sodium + Chlorine',
-    'Iron + Oxygen',
-    'Copper + Oxygen',
-    'Aluminum + Oxygen',
-    'Gold + Aqua Regia',
-    'Silver + Nitric Acid',
-    'Zinc + Sulfuric Acid',
-    'Magnesium + Hydrochloric Acid',
-    'Tin + Lead',
-    'Nickel + Hydrogen',
-    'Platinum + Hydrogen Peroxide',
-    'Titanium + Chlorine',
-    'Mercury + Sulfur',
-    'Uranium + Neutron',
-    'Potassium + Water',
 ];
 
 export const basicReactions = {
-    "Hydrogen + Oxygen": { result: "Water", emoji: "💧" },
-    "Carbon + Oxygen": { result: "CarbonDioxide", emoji: "☁️" },
-    "Sodium + Chlorine": { result: "Salt", emoji: "🧂" },
-    "Iron + Oxygen": { result: "IronOxide", emoji: "🔴" },
-    "Copper + Oxygen": { result: "CopperOxide", emoji: "🟠" },
-    "Aluminum + Oxygen": { result: "AluminumOxide", emoji: "⚪" },
-    "Gold + Aqua Regia": { result: "GoldChloride", emoji: "🟡" },
-    "Silver + Nitric Acid": { result: "SilverNitrate", emoji: "🔵" },
-    "Zinc + Sulfuric Acid": { result: "ZincSulfate", emoji: "🟢" },
-    "Magnesium + Hydrochloric Acid": { result: "MagnesiumChloride", emoji: "🟣" },
-    "Tin + Lead": { result: "Solder", emoji: "🔩" },
-    "Nickel + Hydrogen": { result: "NickelHydride", emoji: "⚙️" },
-    "Platinum + Hydrogen Peroxide": { result: "PlatinumOxide", emoji: "⚗️" },
-    "Titanium + Chlorine": { result: "TitaniumChloride", emoji: "🔷" },
-    "Mercury + Sulfur": { result: "MercurySulfide", emoji: "🟤" },
-    "Uranium + Neutron": { result: "UraniumIsotope", emoji: "☢️" },
-    "Potassium + Water": { result: "PotassiumHydroxide", emoji: "🧪" },
+    "Hydrogen + Hydrogen":          { result: "H2",                         emoji: "💧" },
+    "Oxygen + Oxygen":              { result: "O2",                         emoji: "💧" },
+    "Sulfur + Oxygen":              { result: "SO",                         emoji: "💧" },
+    "SO + Oxygen":                  { result: "SO2",                        emoji: "💧" },
+    "SO2 + Oxygen":                 { result: "SO3",                        emoji: "💧" },
+    "SO3 + Oxygen":                 { result: "SO4",                        emoji: "💧" },
+    "H2 + Oxygen":                  { result: "Water",                      emoji: "💧" },
+    "Carbon + Oxygen":              { result: "CarbonDioxide",              emoji: "☁️" },
+    "Sodium + Chlorine":            { result: "Salt",                       emoji: "🧂" },
+    "Potassium + Chlorine":         { result: "Rock Salt",                  emoji: "🧂" },
+    "Hydrogen + Chlorine":          { result: "Hydrochloric Acid | HCl",    emoji: "🧪" },
+    "Hydrogen + Fluorine":          { result: "Hydrofluoric acid | HF",     emoji: "🧪" },
+    "H2 + SO4":                     { result: "Sulfuric Acid | H2SO4",      emoji: "🧪" },
+    "Iron + Oxygen":                { result: "Iron Oxide | FeO",           emoji: "⚗️" },
+    "Al + O":                       { result: "Al2O3",                      emoji: "⚗️" },
+    "Iron + Carbon":                { result: "Steel | Fe50C",              emoji: "⚔️" },
+    "Copper + Tin":                 { result: "Bronze | SnCu3",             emoji: "🏺" },
+};
+
+
+
+export const acidReactions = {
+    "Hydrogen + Chlorine": { result: "Hydrochloric Acid | HCL", emoji: "🧪" },
+    "Hydrogen + Fluorine": { result: "Hydrofluoric acid | HF", emoji: "🧪" },
+    "H2 + SO4": { result: "Sulfuric Acid | H2SO4", emoji: "🧪" },
+};
+
+export const oxideReactions = {
+    "Fe + O": { result: "FeO", emoji: "⚗️" },
+    "Al + O": { result: "Al2O3", emoji: "⚗️" },
+};
+
+export const alloyReactions = {
+    "Fe + C": { result: "Steel", emoji: "⚔️" },
+    "Cu + Sn": { result: "Bronze", emoji: "🏺" },
 };

@@ -18,7 +18,7 @@ async function initializeDatabase() {
     });
     
     await db.exec(`
-        CREATE TABLE IF NOT EXISTS reactions (
+        CREATE TABLE IF NOT EXISTS reactionфs (
             id INTEGER PRIMARY KEY,
             reactant1 TEXT,
             reactant2 TEXT,
